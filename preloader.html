@@ -1,0 +1,280 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+
+
+<style>
+body{
+    margin:0;
+}
+.preloader{
+    position:absolute;
+    background-color:#ff8080;
+    height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    clip-path:circle(75%);
+    -webkit-animation-name: example;
+    -webkit-animation-duration:1s;
+    -webkit-animation-delay:2s;
+    -webkit-animation-fill-mode:forwards;
+    z-index:2;
+    
+   
+
+
+}
+
+@-webkit-keyframes example{
+    from{
+    
+	}
+    to{
+    clip-path:circle(0px at 0 0);
+    
+	}
+}
+
+
+.ml1 {
+    display:flex;
+    text-align:center;
+  font-weight: 900;
+  font-size: 3.5em;
+  color:white;
+  margin-left:40px;
+  margin-right:40px;
+  text-shadow: 1px 1px 3px #000000;
+}
+
+.ml1 .letter {
+  
+  line-height: 1em;
+}
+
+.ml1 .text-wrapper {
+  position: relative;
+  display: inline-block;
+  padding-top: 0.1em;
+  text-align:center;
+  
+  
+  
+}
+.background1{
+position:absolute;
+background-color:yellow;
+height:270vh;
+width:50vw;
+z-index:-2;
+display:flex;
+animation: open .5s ;
+animation-delay:5s;
+animation-fill-mode:forwards;
+background-size:cover;
+
+
+}
+
+@keyframes open{
+    from{width:50vw;}
+    to{
+     width:0;
+	}
+}
+.background2{
+position:absolute;
+background-color:red;
+height:270vh;
+width:50vw;
+z-index:-1;
+right:0;
+display:flex;
+animation: open .5s ;
+animation-delay:5s;
+animation-fill-mode:forwards;
+background-size:cover;
+
+}
+.container{
+    position:relative;
+    display:flex;
+    margin:0;
+  
+   z-index:0;
+   width:100%;
+   justify-content:center;
+   flex-wrap:wrap;
+}
+ul{
+list-style-type:none;
+text-align:center;
+  mix-blend-mode:overlay;
+  text-decoration:none;
+}
+
+ul li{
+    list-style-type:none;
+    text-decoration:none;
+     text-fill-color:transparent;
+}
+ul li a{
+    opacity:.5;
+ 
+    font-weight:900;
+    font-family:'Alfa Slab One';
+   font-size:9em;
+    line-size:4em;
+    padding-top:30px;
+     padding-bottom:30px;
+     text-fill-color:transparent;
+}
+
+ul li a:hover{
+	color:white;
+	opacity:1;
+}
+
+
+.header{
+    padding-top:30px;
+    font-size:2em;
+    padding-bottom:90px;
+    transition:color 3s; 
+    background-clip:text;
+    transition:1s all;
+    animation: fillcolor 13s linear infinite;
+}
+
+}
+#header:hover{
+    color:white;
+    mix-blend-mode:screen;
+
+}
+
+#logo{
+    position:fixed;
+    float:left;
+   
+  
+    z-index:1;
+}
+
+
+
+
+#image1{
+    position:absolute;
+  
+    width:100vw;
+    z-index:-3;
+    height:100vh;
+    width:100%;
+	object-fit:cover;
+	opacity:0.5s;
+	transition:all ease 0.5s;
+	top:0;
+	left:0;
+    }
+
+
+
+</style>
+<body>
+<div class="preloader" id="loader">
+<h1 class="ml1">
+  <span class="text-wrapper">
+    
+    <span class="letters">We create extraordinary digital solutions that get people talking</span>
+    
+  </span>
+  </h1>
+</div>
+      <div id="logo">
+    <a href=""><img src=".vs/logo.png" height="40px" width="40px"></a>
+    </div>
+    <div class="background">
+  <div class="background1"></div>  
+  <div class="background2"></div>
+  </div>
+  <div
+<div id="image1"><img src="background3.jpg"></div>
+  <div class="container">
+   
+        <div class="parts">
+           
+            <ul id="list" class="lists">
+                <li id="header" class="header2">Our Projects</li>
+                <li><a id="first-image"href="" id="header1" class="elements">bitches</a></li>
+               
+               <li><a href="" data-image=".vs/background4.jpg" class="elements">allpro</a></li>
+                <li><a href="" data-image=".vs/background5.jpg" class="elements">cornerstone</a></li>
+               <li><a href=""data-image=".vs/background6.jpg" class="elements">taylor</a></li>
+               <li><a href="" data-image=".vs/background7.jpg" class="elements">modernmd</a></li>
+               <li><a href="" data-image=".vs/background8.jpg" class="elements">storyverse</a></li>
+               <li><a href="" data-image=".vs/background9.jpg" class="elements">gtscareers</a></li>
+               <li><a href="" data-image=".vs/background2.jpg" class="elements">hennessey</a></li>
+               
+
+
+
+            </ul>
+
+
+        </div>
+
+
+
+
+  </div>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="http://code.jquery.com/jquery-1.9.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+<script>
+  
+
+
+
+var textWrapper = document.querySelector('.ml1 .letters');
+textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+
+anime.timeline({loop:1})
+  .add({
+    targets: '.ml1 .letter',
+    scale: [0.5,1],
+    opacity: [0,1],
+    translateZ: 0,
+    easing: "easeOutExpo",
+    duration: 600,
+    delay: (el, i) => 30* (i+1)
+  })
+  .add({
+    targets: '.ml1 .letter',
+    opacity: 0,
+    duration: 1000,
+    easing: "easeOutExpo",
+    delay: 50,
+  });
+  </script>
+  <script>
+
+  $(fuction(){
+  var image=$("#image1").find('img').attr('src')
+  $("parts ul li a").mouseover(function(){
+  var currentimage = $(this).attr('data-image');
+  $(this).parent().parent().parent().find('img').attr("src",currentimage) ;  
+  
+  });
+
+</script>
+
+</body>
+</html>
